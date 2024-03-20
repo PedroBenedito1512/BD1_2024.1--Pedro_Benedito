@@ -23,7 +23,7 @@ O projeto escolhido foi sobre a biblioteca com o objetivo de construir um modelo
 
 - **Leitor/Usuário:** 
   - CPF como chave primária.
-  - Atributos básicos: CPF, telefone, nome.
+  - Atributos básicos:telefone, nome.
 
 - **Empréstimo:** 
   - ID de empréstimo como chave primária identificando cada empréstimo feito.
@@ -32,29 +32,29 @@ O projeto escolhido foi sobre a biblioteca com o objetivo de construir um modelo
 ### Requisitos Adicionais
 
 - **Livro:** 
-  - Tipo de capa, faixa de idade indicada, número de cópias na biblioteca, localização, assunto abordado.
-
+  - tipo de capa, faixa de idade indicada, número de copias na biblioteca, localização, assunto abordado, esses atributos foram adicionados com base em análises de um uma biblioteca real  
 - **Pessoa:** 
-  - Superclasse para agrupar atributos semelhantes entre funcionário e usuário.
+  - fiz essa superclasse pois tinham funcionário e usuário com atributos CPF, nome e telefone semelhantes  
 
 - **Funcionário (Especialização):** 
-  - Gerente com adicional salarial como atributo.
+  -  como especialização de funcionário coloquei gerente pois é essencial alguém que coordene os demais funcionários e coloquei um adicional salarial como atributo pois é o que geralmente acontece com gerentes  
 
 - **Empréstimo:** 
-  - Adicional de multa como atributo composto.
+  - fiz um adicional de multa para que caso o usuário não devolva livro no tempo limite terá uma a multa que é um atributo composto, pois será dividida em acumulativa e fixa onde acumulativa é por quantidades de dia de atraso e a fixa para atraso 
+
+(observação) coloquei como relações de livro, usuário e funcionário com empréstimo então fiquei em dúvida se especificava o nome de quem solicitou empréstimo e quem autorizou e o livro emprestado como atributos de empréstimo ou não, decidi não os deixar como atributo pois ficou redundante.
 
 - **Departamento:** 
-  - Nome, número de funcionários, tipo.
+  - criei essa entidade pois funcionários de um tipo específico são agrupados em departamentos exemplo limpeza, segurança, atendimento e administração da biblioteca, defini como atributos nome departamento, número de funcionários que trabalham nesse departamento e o tipo desse departamento  
 
 - **Autor:** 
-  - Nome do livro mais solicitado como atributo adicional.
+  - adicionei como atributos o nome do livro mais solicitado, achei interessante ter esse dado  
 
 - **Editora:** 
-  - CNPJ como chave, nome, quantidade de livros, contato.
+  - adicionei essa entidade com cnpj de chave e nome, quantidade de livros e contato adicionei essa entidade com tais atributos pois acho valido ter dados de quem fornece os livros para biblioteca  
 
 - **Equipamento:** 
-  - ID do equipamento como chave.
-  - Atributos: quantidade, restrito (booleano), descrição.
+  - defini como chave o id do equipamento e adicionei os demais atributos quantidade de equipamentos, restrito (booleano para saber se é restrito para funcionários de um departamento ou não) e descrição de equipamento. Defini essa entidade e atributos pensando em como ocorre um controle itens que tem em uma biblioteca até para fins de solicitação de adicionar mais (exemplo quantidade de computadores disponíveis, quais são de uso restrito e quais não são)  
 
 ### Relações
 
@@ -71,11 +71,12 @@ As relações geradas a partir dessas entidades foram:
 
 - **Usuário/Leitor:** 
   - Solicita um ou mais empréstimos.
+  - usa um ou mais itens (não restrito)
 
 - **Empréstimo:** 
   - Autorizado por um funcionário.
   - Livro pode ser solicitado para um empréstimo.
-  - Empréstimo pode ser solicitado por um leitor.
+  - pode ser solicitado por um leitor.
 
 - **Departamento:** 
   - Gerido por um gerente.
