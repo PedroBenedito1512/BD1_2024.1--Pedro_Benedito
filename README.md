@@ -58,8 +58,8 @@ O projeto escolhido foi sobre a biblioteca com o objetivo de construir um modelo
 
   ### EXTRA
   **Fila de espera:** 
-   - coloquei a fila de espera como adicional extra para caso um livro tenha sido solicitado por muitos usuarios, como atrbutos coloquei limite da lista para não ficar muito grande, numero de pessoas contidas na lista para saber se é possivel entrar, id da lista para registrar qual fila de espera está entrando,numero na fila pra saber sua colocação para pegar o livro( primeiro, segundo e etc) e por ultimo adicionei o atributo tempo medio de espera. Relações da fila de espera são  com o livro que está contido para esssa lista de espera e com 
-   o usuario que se inscreve nessa lista de espera 
+   - coloquei a fila de espera como adicional extra para caso um livro tenha sido solicitado por muitos usuarios ou não tenha disponibilidade suficiente do mesmo, como atrbutos coloquei limite da lista para não ficar muito grande, numero de pessoas contidas na lista para saber se é possivel entrar , id da lista para registrar qual fila de espera está entrando,numero na fila pra saber sua colocação para pegar o livro( primeiro, segundo e etc) e por ultimo adicionei o atributo tempo medio de espera. Relações da fila de espera são  com o livro que está contido para esssa lista de espera e com 
+   o usuario que se inscreve em uma ou mais listas de espera 
 ### Relações
 
 As relações geradas a partir dessas entidades foram:
