@@ -54,8 +54,12 @@ O projeto escolhido foi sobre a biblioteca com o objetivo de construir um modelo
   - adicionei essa entidade com cnpj de chave e nome, quantidade de livros e contato adicionei essa entidade com tais atributos pois acho valido ter dados de quem fornece os livros para biblioteca  
 
 - **Equipamento:** 
-  - defini como chave o id do equipamento e adicionei os demais atributos quantidade de equipamentos, restrito (booleano para saber se é restrito para funcionários de um departamento ou não) e descrição de equipamento. Defini essa entidade e atributos pensando em como ocorre um controle itens que tem em uma biblioteca até para fins de solicitação de adicionar mais (exemplo quantidade de computadores disponíveis, quais são de uso restrito e quais não são)  
+  - defini como chave o id do equipamento e adicionei os demais atributos quantidade de equipamentos, restrito (booleano para saber se é restrito para funcionários de um departamento ou não) e descrição de equipamento. Defini essa entidade e atributos pensando em como ocorre um controle itens que tem em uma biblioteca até para fins de solicitação de adicionar mais (exemplo quantidade de computadores disponíveis, quais são de uso restrito e quais não são) 
 
+  ### EXTRA
+  **Fila de espera:** 
+   - coloquei a fila de espera como adicional extra para caso um livro tenha sido solicitado por muitos usuarios, como atrbutos coloquei limite da lista para não ficar muito grande, numero de pessoas contidas na lista para saber se é possivel entrar, id da lista para registrar qual fila de espera está entrando,numero na fila pra saber sua colocação para pegar o livro( primeiro, segundo e etc) e por ultimo adicionei o atributo tempo medio de espera. Relações da fila de espera são  com o livro que está contido para esssa lista de espera e com 
+   o usuario que se inscreve nessa lista de espera 
 ### Relações
 
 As relações geradas a partir dessas entidades foram:
